@@ -17,7 +17,7 @@ sudo bash ./run.sh
   And with this it installs chromium in ~/.Chromium and open it when it finalizes.
   
 ## Enable Automatically updates:
-  If you're on Mac OS, you have to manually edit the crontab to enable automatic updates. If you're on GNU/Linux, you have to do it too, but in the future the script will be automatically. Let's begin. First, you have to open a terminal and type the following:
+  If you're on Mac OS, you have to manually edit the crontab to enable automatic updates. If you're on GNU/Linux, you don't have to do it too, the script will do it automatically. Let's begin. First, you have to open a terminal and type the following:
   ```
   whoami
   ```
@@ -28,18 +28,13 @@ sudo bash ./run.sh
  It will open a command line text editor, so, if you have Mac OS you have to type this:
  ```
  * * * * 1 /Users/YOUR_USER/.chromium/AutoUpdate.sh
- ```
- And also, if you have GNU/Linux you have to type this:
- ```
- * * * * 1 /home/YOUR_USER/.chromium/AutoUpdate.sh
- ```
-  Replacing "YOUR_NAME" with your username that said when you executed "whoami". Now you press control+"o" and Enter and control+"x" without the double quotes. And now you can close it.
+```
+  Replacing "YOUR_NAME" with your username that said when you executed "whoami". Now you press control+'o' and Enter and control+'x' without the quotes. And now you can close it.
   
   If you don't want to edit your crontab or simply you want to update it manually, you can do it with this command whenever you want:
   ```
   bash ~/.chromium/update.sh
   ```
-  Changing "YOR_CHROMIUM_DIRECTORY" to your chromium folder location without the double quotes. 
   
 ## Ready To Go!
 
