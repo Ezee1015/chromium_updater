@@ -23,7 +23,7 @@ clear
 
 if [ $KernelOS == "Darwin" ]; then 
   ln -s ~/.chromium/latest/Chromium.app/ /Applications/Chromium.app 
-  while [ "$(crontab -l | grep "* * * * 1 $HOME/.chromium/AutoUpdate.sh")" = "* * * * 1 $HOME/.chromium/AutoUpdate.sh" ] || [ "$AUTO" != "n" ] || [ "$AUTO" != "N" ]; do
+  while [ "$(crontab -l) | grep "* * * * 1 $HOME/.chromium/AutoUpdate.sh")" = "* * * * 1 $HOME/.chromium/AutoUpdate.sh" ] || [ "$AUTO" != "n" ] || [ "$AUTO" != "N" ]; do
     clear
     echo ""
     echo "  If you DON'T want to have autoupdates, press 'N' and Enter. Otherwise, press Enter"
