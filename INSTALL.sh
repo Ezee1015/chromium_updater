@@ -8,6 +8,7 @@ mkdir ~/.chromium/
 cp $BASEDIR/Scripts/Remove-Last-Version.sh ~/.chromium/
 cp $BASEDIR/Scripts/run.sh ~/.chromium/
 cp $BASEDIR/Scripts/update.sh ~/.chromium/
+cp BASEDIR/Scripts/AutoUpdate.sh ~/.chromium/
 
 cp -r $BASEDIR/Icons ~/.chromium/
 
