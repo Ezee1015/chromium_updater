@@ -12,9 +12,8 @@ This project is a fork from the original creator: scheib. And I have to say than
 ```
 cd ~/Downloads
 git clone https://github.com/sudo-Eze/chromium_updater
-mv chromium_updater ~/.chromium
-cd ~/.chromium/
-sudo bash INSTALL.sh
+cd chromium_updater
+bash INSTALL.sh
 ```
   And with this it installs chromium in ~/.Chromium and open it when it finalizes.
 
