@@ -7,7 +7,7 @@ if [ -d ~/.chromium ]; then
   if [ $KernelOS == "Darwin" ]; then sudo rm -rf /Applications/Chromium.app ; fi
   if [ $KernelOS == "Linux" ]; then sudo rm -rf ~/.local/share/applications/Chromium.desktop && sudo rm -rf ~/.local/share/applications/Restore\ Chromium.desktop ; fi
   clear
-  while [ "$(crontab -l | grep "* * * * 1 $HOME/.chromium/AutoUpdate.sh")" = "* * * * 1 $HOME/.chromium/AutoUpdate.sh" ] ; do
+  while [ "$(crontab -l) | grep "* * * * 1 $HOME/.chromium/AutoUpdate.sh")" = "* * * * 1 $HOME/.chromium/AutoUpdate.sh" ] ; do
     echo ""
     echo "   Please, delete the chromium auto-update line from the crontab."
     echo "   To do that, you have to delete it manually."
