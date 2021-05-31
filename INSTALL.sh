@@ -94,5 +94,6 @@ fi
  
 bash ~/.chromium/run.sh &
 echo ""
-echo "Now, you can close the terminal."
+echo "    Now, you can close the terminal."
+echo ""
 exit
