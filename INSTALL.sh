@@ -24,7 +24,7 @@ clear
 
 if [ $KernelOS == "Darwin" ]; then 
   ln -s ~/.chromium/latest/Chromium.app/ /Applications/Chromium.app 
-  while [ "$(crontab -l | grep ".chromium/AutoUpdate.sh")" != "* * * * 1 $HOME/.chromium/AutoUpdate.sh" ]; do
+  while [ "$(crontab -l | grep ".chromium/AutoUpdate.sh")" != "* * * * 1 bash $HOME/.chromium/AutoUpdate.sh" ]; do
     clear
     echo ""
     echo "  If you DON'T want to have autoupdates, press 'N' and Enter. Otherwise, press Enter"
@@ -32,7 +32,7 @@ if [ $KernelOS == "Darwin" ]; then
     read AUTO
     if [  "$AUTO" = "n" ] || [ "$AUTO" = "N" ]; then bash ~/.chromium/run.sh & exit ; fi
     clear
-    echo "Please add '* * * * 1 /Users/$(whoami)/.chromium/AutoUpdate.sh' Then press control+'o' and Enter and control+'x' without the double quotes. And now you can close the terminal. Press Enter"
+    echo "Please add '* * * * 1 bash /Users/$(whoami)/.chromium/AutoUpdate.sh' Then press control+'o' and Enter and control+'x' without the double quotes. And now you can close the terminal. Press Enter"
     echo ""
     read PAUSE
     echo "Are you ready? Did you copy the line with Ctrl+'C'? Press Enter if it's true"
@@ -87,7 +87,7 @@ if [ $KernelOS == "Linux" ]; then
   read AUTO
   if [  "$AUTO" = "n" ] || [ "$AUTO" = "N" ]; then bash ~/.chromium/run.sh & exit ; fi
   sudo cat "/var/spool/cron/crontabs/$(whoami)" > /tmp/chron 
-  sudo echo "* * * * 1 $HOME/.chromium/AutoUpdate.sh" >> /tmp/chron
+  sudo echo "* * * * 1 bash $HOME/.chromium/AutoUpdate.sh" >> /tmp/chron
   sudo cp -r /tmp/chron "/var/spool/cron/crontabs/$(whoami)"
   sudo rm -r /tmp/chron
 fi
